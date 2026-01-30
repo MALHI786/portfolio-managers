@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { Plus, Home, FolderGit2 } from 'lucide-react';
+import { Plus, Home, FolderGit2, LogOut } from 'lucide-react';
 import { DashboardCard } from '@/components/DashboardCard';
 import { getProjects } from '@/lib/projects';
+import { LogoutButton } from '@/components/LogoutButton';
 
 export const dynamic = 'force-dynamic';
 
@@ -32,13 +33,16 @@ export default async function DashboardPage() {
                                 </p>
                             </div>
                         </div>
-                        <Link
-                            href="/"
-                            className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                        >
-                            <Home className="w-4 h-4" />
-                            <span className="hidden sm:inline">View Portfolio</span>
-                        </Link>
+                        <div className="flex items-center gap-2">
+                            <Link
+                                href="/"
+                                className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                            >
+                                <Home className="w-4 h-4" />
+                                <span className="hidden sm:inline">View Portfolio</span>
+                            </Link>
+                            <LogoutButton />
+                        </div>
                     </div>
                 </header>
 
