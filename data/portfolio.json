@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "name": "Muhammad Salman Ashraf",
+    "title": "BS Artificial Intelligence Student | AI & Software Developer",
+    "bio": "Passionate about artificial intelligence, machine learning, and software development. I build practical solutions using Python, C++, and C# with a focus on real-world applications.",
+    "resumeLink": "/resume.pdf"
+  },
+  "about": {
+    "text": "I am a dedicated BS Artificial Intelligence student with strong expertise in AI, Machine Learning, and Software Development. I have served as Class Representative for multiple semesters, bridging communication between students and faculty. Known for leadership, teamwork, and clear communication skills, I enjoy collaborating on challenging projects and continuously expanding my technical knowledge."
+  },
+  "skills": [
+    {
+      "category": "Programming Languages",
+      "items": ["Python (Advanced)", "C++ (Advanced)", "C# (Intermediate)", "SQL (Basic)"]
+    },
+    {
+      "category": "AI & Machine Learning",
+      "items": ["Supervised & Unsupervised Learning", "Computer Vision", "TensorFlow", "Pandas & NumPy", "Data Preprocessing"]
+    },
+    {
+      "category": "Software Development",
+      "items": ["Object-Oriented Programming", "Data Structures & Algorithms", "GUI Development", "File Handling", "Database Management"]
+    },
+    {
+      "category": "Tools & Technologies",
+      "items": ["Git & GitHub", "Visual Studio & VS Code", "Streamlit", "Jupyter Notebook", "Scikit-learn"]
+    }
+  ],
+  "contact": {
+    "email": "salmanmalhig@gmail.com",
+    "github": "https://github.com/MALHI786",
+    "githubUsername": "MALHI786",
+    "linkedin": "https://www.linkedin.com/in/muhammad-salman-ashraf-163002310",
+    "linkedinName": "Muhammad Salman Ashraf"
+  },
+  "footer": {
+    "copyright": "© 2026 Muhammad Salman Ashraf – AI Student Portfolio",
+    "note": "Built with Next.js & Tailwind CSS"
+  }
+}

@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { Project } from '@/lib/types';
+import { Project, PortfolioContent } from '@/lib/types';
 
 export async function getProjects(): Promise<Project[]> {
     const filePath = path.join(process.cwd(), 'data/projects.json');
@@ -16,5 +16,17 @@ export async function getProjects(): Promise<Project[]> {
     } catch (error) {
         console.error('Error reading projects:', error);
         return [];
+    }
+}
+
+export async function getPortfolioContent(): Promise<PortfolioContent | null> {
+    const filePath = path.join(process.cwd(), 'data/portfolio.json');
+
+    try {
+        const fileContent = await fs.readFile(filePath, 'utf-8');
+        return JSON.parse(fileContent);
+    } catch (error) {
+        console.error('Error reading portfolio content:', error);
+        return null;
     }
 }
