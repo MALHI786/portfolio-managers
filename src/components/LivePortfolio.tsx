@@ -162,7 +162,7 @@ export default function LivePortfolio({ initialPortfolio, initialProjects }: Pro
               <div key={index} className="neon-card p-6">
                 <h3 className="text-lg font-bold text-[var(--neon-blue)] mb-4">{skillCategory.category}</h3>
                 <ul className="space-y-2 text-[var(--text-secondary)]">
-                  {skillCategory.items.map((item, i) => (
+                  {skillCategory.items.map((item: string, i: number) => (
                     <li key={i}>• {item}</li>
                   ))}
                 </ul>
