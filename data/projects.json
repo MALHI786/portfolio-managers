@@ -1,0 +1,91 @@
+[
+  {
+    "id": "1706620800001",
+    "title": "Bank Management System",
+    "overview": "A comprehensive banking application with customer account management, transaction processing, and administrative controls. Features user authentication, balance inquiries, funds transfer, and transaction history tracking.",
+    "features": [
+      "Account Management",
+      "Transaction Processing",
+      "User Authentication",
+      "Database Integration",
+      "Balance Inquiries",
+      "Funds Transfer",
+      "Transaction History Tracking"
+    ],
+    "techStack": [
+      "C#",
+      "Windows Forms",
+      "Database Management"
+    ],
+    "githubLink": "https://github.com/MALHI786/bank_management_system-Csharp",
+    "documentation": "A full-featured desktop banking application built with C# and Windows Forms. Implements secure user authentication, comprehensive account management, and complete transaction processing workflows.",
+    "createdAt": "2025-01-15T10:00:00Z"
+  },
+  {
+    "id": "1706620800002",
+    "title": "Dogs vs Cats Image Classifier",
+    "overview": "A web-based machine learning application that classifies images as dogs or cats using a fine-tuned MobileNet V2 model. Features real-time predictions with adjustable confidence thresholds and a user-friendly interface.",
+    "features": [
+      "Deep Learning with MobileNet V2",
+      "Transfer Learning",
+      "Web Interface with Streamlit",
+      "Real-time Prediction",
+      "Image Processing",
+      "Adjustable Confidence Thresholds"
+    ],
+    "techStack": [
+      "Python",
+      "TensorFlow",
+      "Streamlit",
+      "Machine Learning"
+    ],
+    "githubLink": "https://github.com/MALHI786/DOGS_CATS_Classifier",
+    "documentation": "A machine learning project demonstrating transfer learning with MobileNet V2 for binary image classification. The Streamlit web app provides an intuitive interface for users to upload images and receive instant predictions.",
+    "createdAt": "2025-01-10T10:00:00Z"
+  },
+  {
+    "id": "1706620800003",
+    "title": "Advanced File Management Utility",
+    "overview": "A powerful command-line utility for comprehensive file operations including network sharing, encryption, hashing, compression, and organization. Implements security features and efficient file handling algorithms.",
+    "features": [
+      "File Encryption",
+      "Network Sharing",
+      "Hash Calculation",
+      "File Compression",
+      "Recursive Search",
+      "Security Features",
+      "Efficient File Handling"
+    ],
+    "techStack": [
+      "C++",
+      "File Systems",
+      "Cryptography",
+      "Networking"
+    ],
+    "githubLink": "https://github.com/MALHI786/FILE_management_utility",
+    "documentation": "A comprehensive C++ utility demonstrating advanced file system operations, cryptographic algorithms, and network programming. Features modular design with separate components for encryption, compression, and file organization.",
+    "createdAt": "2025-01-05T10:00:00Z"
+  },
+  {
+    "id": "1706620800004",
+    "title": "Portfolio Manager",
+    "overview": "A system that automatically manages my portfolio projects and redeploys to Vercel. Features a dashboard for CRUD operations with GitHub API integration for automatic commits.",
+    "features": [
+      "Dashboard for project management",
+      "GitHub API integration for storage",
+      "Auto-deployment via Vercel",
+      "Form validation",
+      "Delete confirmation with safety checks"
+    ],
+    "techStack": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "GitHub API",
+      "Vercel"
+    ],
+    "githubLink": "https://github.com/MALHI786/portfolio-manager",
+    "documentation": "A full-stack portfolio management system that automates the process of updating portfolio content. Changes made through the dashboard are automatically committed to GitHub, triggering Vercel to redeploy the portfolio.",
+    "createdAt": "2026-01-30T12:00:00Z"
+  }
+]

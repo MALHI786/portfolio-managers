@@ -1,26 +1,106 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Neon Color Palette - Matching Salman's Portfolio */
+  --neon-blue: #00f3ff;
+  --neon-purple: #9d00ff;
+  --neon-pink: #ff00ff;
+  --neon-green: #00ff9d;
+  
+  /* Base Colors */
+  --background: #0a0a0f;
+  --foreground: #ffffff;
+  --card-bg: rgba(20, 20, 30, 0.8);
+  --card-border: rgba(0, 243, 255, 0.1);
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0d0;
+  --text-muted: #8888aa;
+  
+  /* Neon Glow Effects */
+  --neon-glow: 0 0 20px rgba(0, 243, 255, 0.5),
+               0 0 40px rgba(157, 0, 255, 0.3),
+               0 0 60px rgba(255, 0, 255, 0.1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-neon-blue: var(--neon-blue);
+  --color-neon-purple: var(--neon-purple);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(157, 0, 255, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(0, 243, 255, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 50% 50%, rgba(255, 0, 255, 0.05) 0%, transparent 50%);
+  min-height: 100vh;
+}
+
+/* Neon Text Gradient */
+.neon-text {
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 30px rgba(0, 243, 255, 0.3);
+}
+
+/* Neon Border Card */
+.neon-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.neon-card:hover {
+  border-color: rgba(0, 243, 255, 0.3);
+  box-shadow: var(--neon-glow);
+  transform: translateY(-4px);
+}
+
+/* Neon Button */
+.neon-btn {
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+}
+
+.neon-btn:hover {
+  box-shadow: 0 0 25px rgba(0, 243, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Tech Tag */
+.tech-tag {
+  background: rgba(0, 243, 255, 0.1);
+  color: var(--neon-blue);
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Feature Tag */
+.feature-tag {
+  background: rgba(157, 0, 255, 0.1);
+  color: #d0a0ff;
+  border: 1px solid rgba(157, 0, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
 }
