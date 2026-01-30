@@ -1,27 +1,5 @@
 [
   {
-    "id": "1706620800001",
-    "title": "Bank Management System",
-    "overview": "A comprehensive banking application with customer account management, transaction processing, and administrative controls. Features user authentication, balance inquiries, funds transfer, and transaction history tracking.",
-    "features": [
-      "Account Management",
-      "Transaction Processing",
-      "User Authentication",
-      "Database Integration",
-      "Balance Inquiries",
-      "Funds Transfer",
-      "Transaction History Tracking"
-    ],
-    "techStack": [
-      "C#",
-      "Windows Forms",
-      "Database Management"
-    ],
-    "githubLink": "https://github.com/MALHI786/bank_management_system-Csharp",
-    "documentation": "A full-featured desktop banking application built with C# and Windows Forms. Implements secure user authentication, comprehensive account management, and complete transaction processing workflows.",
-    "createdAt": "2025-01-15T10:00:00Z"
-  },
-  {
     "id": "1706620800002",
     "title": "Dogs vs Cats Image Classifier",
     "overview": "A web-based machine learning application that classifies images as dogs or cats using a fine-tuned MobileNet V2 model. Features real-time predictions with adjustable confidence thresholds and a user-friendly interface.",
