@@ -55,11 +55,7 @@ async function saveFileToGithub<T>(path: string, data: T, currentSha: string, me
         message: message,
         content: content,
         sha: currentSha,
-        branch: BRANCH,
-        committer: {
-            name: 'Portfolio Bot',
-            email: 'bot@example.com'
-        }
+        branch: BRANCH
     });
 }
 
