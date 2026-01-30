@@ -25,9 +25,15 @@ export async function GET() {
 // PUT: Update portfolio content
 export async function PUT(request: Request) {
     try {
-        if (!process.env.GITHUB_TOKEN) {
+        // Check all required env variables
+        if (!process.env.GITHUB_TOKEN || !process.env.GITHUB_OWNER || !process.env.GITHUB_REPO) {
+            console.error('Missing env vars:', {
+                hasToken: !!process.env.GITHUB_TOKEN,
+                owner: process.env.GITHUB_OWNER,
+                repo: process.env.GITHUB_REPO
+            });
             return NextResponse.json(
-                { error: 'GitHub integration not configured' },
+                { error: 'GitHub integration not configured. Please set GITHUB_TOKEN, GITHUB_OWNER, and GITHUB_REPO in Vercel.' },
                 { status: 503 }
             );
         }
@@ -50,6 +56,8 @@ export async function PUT(request: Request) {
             );
         }
 
+        console.log(`Saving ${section} section to GitHub...`);
+        
         const { portfolio, sha } = await fetchPortfolioFromGithub();
         
         // Update the specific section
@@ -64,11 +72,13 @@ export async function PUT(request: Request) {
             `update: ${section} section updated`
         );
 
+        console.log(`${section} section saved successfully!`);
+        
         return NextResponse.json({ success: true, portfolio: updatedPortfolio });
     } catch (error) {
         console.error('PUT /api/portfolio error:', error);
         return NextResponse.json(
-            { error: 'Failed to update portfolio' },
+            { error: error instanceof Error ? error.message : 'Failed to update portfolio' },
             { status: 500 }
         );
     }
