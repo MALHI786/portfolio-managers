@@ -4,21 +4,24 @@ import { getPortfolioContent } from '@/lib/projects';
 
 // GET: Returns portfolio content
 export async function GET() {
-    if (!process.env.GITHUB_TOKEN) {
+    // Check if GitHub is configured
+    if (!process.env.GITHUB_TOKEN || !process.env.GITHUB_OWNER || !process.env.GITHUB_REPO) {
+        console.log('GitHub not configured, returning local data');
         // Return local data for development
         const localData = await getPortfolioContent();
         return NextResponse.json(localData);
     }
 
     try {
+        console.log('Fetching portfolio from GitHub...');
         const { portfolio } = await fetchPortfolioFromGithub();
+        console.log('Portfolio fetched successfully');
         return NextResponse.json(portfolio);
     } catch (error) {
         console.error('GET /api/portfolio error:', error);
-        return NextResponse.json(
-            { error: 'Failed to fetch portfolio content' },
-            { status: 500 }
-        );
+        // Fallback to local data if GitHub fetch fails
+        const localData = await getPortfolioContent();
+        return NextResponse.json(localData);
     }
 }
 
