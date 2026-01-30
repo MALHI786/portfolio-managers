@@ -29,18 +29,26 @@ export default function LivePortfolio({ initialPortfolio, initialProjects }: Pro
 
     async function fetchLatest() {
       try {
-        const res = await fetch('/api/portfolio', { cache: 'no-store' });
-        if (!res.ok) return;
-        const data = await res.json();
-        if (mounted) setPortfolio(data);
+        // Fetch portfolio
+        const portfolioRes = await fetch('/api/portfolio', { cache: 'no-store' });
+        if (portfolioRes.ok) {
+          const portfolioData = await portfolioRes.json();
+          if (mounted && !portfolioData.error) setPortfolio(portfolioData);
+        }
+
+        // Fetch projects
+        const projectsRes = await fetch('/api/projects', { cache: 'no-store' });
+        if (projectsRes.ok) {
+          const projectsData = await projectsRes.json();
+          if (mounted && Array.isArray(projectsData)) setProjects(projectsData);
+        }
       } catch (e) {
-        // ignore
+        // ignore - use initial data
       }
     }
 
     fetchLatest();
 
-    // Poll once after save could be implemented, but a single fetch on mount helps.
     return () => { mounted = false; };
   }, []);
 
