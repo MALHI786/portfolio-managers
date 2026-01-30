@@ -1,5 +1,6 @@
 import { getProjects } from '@/lib/projects';
 import { ProjectCard } from '@/components/ProjectCard';
+import { AdminShortcut } from '@/components/AdminShortcut';
 import { Github, Linkedin, Mail, Download } from 'lucide-react';
 import Image from 'next/image';
 
@@ -10,6 +11,7 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen">
+      <AdminShortcut />
       {/* Navigation */}
       <header className="fixed top-0 left-0 w-full z-50 bg-[rgba(10,10,15,0.9)] backdrop-blur-xl border-b border-[var(--card-border)]">
         <div className="max-w-6xl mx-auto px-4 py-4">
