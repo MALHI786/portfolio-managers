@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Salman Ashraf - AI & Software Developer",
+  title: "Muhammad Salman Ashraf | AI & Software Developer Portfolio",
   description: "Portfolio of Muhammad Salman Ashraf - BS Artificial Intelligence student. Passionate about AI, machine learning, and software development.",
   keywords: ["portfolio", "AI", "machine learning", "Python", "C++", "software developer", "Muhammad Salman Ashraf"],
 };
