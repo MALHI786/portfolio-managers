@@ -1,7 +1,7 @@
 {
   "hero": {
     "name": "Muhammad Salman Ashraf",
-    "title": "BS Artificial Intelligence Student | AI & Software Developer",
+    "title": "BS Artificial Intelligence Student | AI & Software",
     "bio": "Passionate about artificial intelligence, machine learning, and software development. I build practical solutions using Python, C++, and C# with a focus on real-world applications.",
     "resumeLink": "/resume.pdf"
   },
@@ -11,19 +11,42 @@
   "skills": [
     {
       "category": "Programming Languages",
-      "items": ["Python (Advanced)", "C++ (Advanced)", "C# (Intermediate)", "SQL (Basic)"]
+      "items": [
+        "Python (Advanced)",
+        "C++ (Advanced)",
+        "C# (Intermediate)",
+        "SQL (Basic)"
+      ]
     },
     {
       "category": "AI & Machine Learning",
-      "items": ["Supervised & Unsupervised Learning", "Computer Vision", "TensorFlow", "Pandas & NumPy", "Data Preprocessing"]
+      "items": [
+        "Supervised & Unsupervised Learning",
+        "Computer Vision",
+        "TensorFlow",
+        "Pandas & NumPy",
+        "Data Preprocessing"
+      ]
     },
     {
       "category": "Software Development",
-      "items": ["Object-Oriented Programming", "Data Structures & Algorithms", "GUI Development", "File Handling", "Database Management"]
+      "items": [
+        "Object-Oriented Programming",
+        "Data Structures & Algorithms",
+        "GUI Development",
+        "File Handling",
+        "Database Management"
+      ]
     },
     {
       "category": "Tools & Technologies",
-      "items": ["Git & GitHub", "Visual Studio & VS Code", "Streamlit", "Jupyter Notebook", "Scikit-learn"]
+      "items": [
+        "Git & GitHub",
+        "Visual Studio & VS Code",
+        "Streamlit",
+        "Jupyter Notebook",
+        "Scikit-learn"
+      ]
     }
   ],
   "contact": {
