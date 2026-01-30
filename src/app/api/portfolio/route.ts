@@ -13,15 +13,22 @@ export async function GET() {
     }
 
     try {
-        console.log('Fetching portfolio from GitHub...');
+        console.log(`Fetching portfolio from GitHub: ${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}`);
         const { portfolio } = await fetchPortfolioFromGithub();
         console.log('Portfolio fetched successfully');
         return NextResponse.json(portfolio);
-    } catch (error) {
-        console.error('GET /api/portfolio error:', error);
-        // Fallback to local data if GitHub fetch fails
-        const localData = await getPortfolioContent();
-        return NextResponse.json(localData);
+    } catch (error: unknown) {
+        const err = error as { message?: string };
+        console.error('GET /api/portfolio error:', err.message);
+        // Return error message so dashboard can show what's wrong
+        return NextResponse.json({ 
+            error: err.message || 'Failed to fetch portfolio',
+            config: {
+                owner: process.env.GITHUB_OWNER,
+                repo: process.env.GITHUB_REPO,
+                hasToken: !!process.env.GITHUB_TOKEN
+            }
+        }, { status: 500 });
     }
 }
 

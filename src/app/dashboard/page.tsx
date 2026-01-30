@@ -1,9 +1,8 @@
 import Link from 'next/link';
-import { Plus, Home, FolderGit2, User, Sparkles, Mail } from 'lucide-react';
-import { DashboardCard } from '@/components/DashboardCard';
+import { Home, Sparkles } from 'lucide-react';
 import { getProjects, getPortfolioContent } from '@/lib/projects';
 import { LogoutButton } from '@/components/LogoutButton';
-import { DashboardTabs } from '@/components/DashboardTabs';
+import { DashboardClient } from '@/components/DashboardClient';
 
 export const dynamic = 'force-dynamic';
 
@@ -13,8 +12,9 @@ export const metadata = {
 };
 
 export default async function DashboardPage() {
-    const projects = await getProjects();
-    const portfolio = await getPortfolioContent();
+    // Get local data as fallback
+    const localProjects = await getProjects();
+    const localPortfolio = await getPortfolioContent();
 
     return (
         <main className="min-h-screen bg-[#0a0a0f] py-8 px-4 sm:px-6 lg:px-8">
@@ -48,8 +48,11 @@ export default async function DashboardPage() {
                     </div>
                 </header>
 
-                {/* Dashboard Tabs - Client Component */}
-                <DashboardTabs projects={projects} portfolio={portfolio} />
+                {/* Dashboard Client - Fetches from API */}
+                <DashboardClient 
+                    fallbackProjects={localProjects} 
+                    fallbackPortfolio={localPortfolio} 
+                />
 
                 {/* Footer note */}
                 <div className="mt-8 p-4 bg-[rgba(0,243,255,0.05)] border border-[var(--neon-blue)] rounded-lg">

@@ -14,10 +14,16 @@ const octokit = GITHUB_TOKEN ? new Octokit({ auth: GITHUB_TOKEN }) : null;
 // Generic function to fetch any JSON file from GitHub
 async function fetchFileFromGithub<T>(path: string): Promise<{ data: T, sha: string }> {
     if (!octokit || !OWNER || !REPO) {
-        throw new Error('GitHub configuration missing (GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO)');
+        console.error('GitHub config check:', { 
+            hasToken: !!GITHUB_TOKEN, 
+            owner: OWNER, 
+            repo: REPO 
+        });
+        throw new Error(`GitHub configuration missing - Token: ${!!GITHUB_TOKEN}, Owner: ${OWNER}, Repo: ${REPO}`);
     }
 
     try {
+        console.log(`Fetching from GitHub: ${OWNER}/${REPO}/${path}`);
         const { data } = await octokit.rest.repos.getContent({
             owner: OWNER,
             repo: REPO,
@@ -34,9 +40,10 @@ async function fetchFileFromGithub<T>(path: string): Promise<{ data: T, sha: str
         }
 
         throw new Error('Invalid response from GitHub');
-    } catch (error) {
-        console.error(`Error fetching ${path} from GitHub:`, error);
-        throw error;
+    } catch (error: unknown) {
+        const err = error as { status?: number; message?: string };
+        console.error(`Error fetching ${path} from GitHub:`, err.status, err.message);
+        throw new Error(`GitHub API Error (${err.status || 'unknown'}): ${err.message || 'Unknown error'} - Repo: ${OWNER}/${REPO}/${path}`);
     }
 }
 
